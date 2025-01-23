@@ -237,7 +237,6 @@ body {
     overflow: hidden;
     text-align: center;
     transition: transform 0.3s;
-    background-color: white;
 }
 
 .catalog-card:hover {
