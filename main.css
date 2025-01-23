@@ -235,7 +235,6 @@ body {
     border: 1px solid #ccc;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
     transition: transform 0.3s;
     background-color: white;
