@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Based Product Catalog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+        }
+
+        .catalog {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 40px;
+        }
+
+        .catalog-card {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s;
+            background-color: white;
+        }
+
+        .catalog-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .catalog-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .catalog-card-content {
+            padding: 20px;
+        }
+
+        .catalog-card-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .catalog-card-description {
+            font-size: 1em;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .catalog-card-link {
+            text-decoration: none;
+            color: #007BFF;
+            font-weight: bold;
+        }
+
+        .catalog-card-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<section>
+    <div class="catalog">
+        <div class="catalog-card">
+            <img src="azhaan.jpg" alt="Product Image">
+            <div class="catalog-card-content">
+                <div class="catalog-card-title">Compressed Family</div>
+                <div class="catalog-card-description">Neue Corp Compressed<br>10 Weights + Variable Cut</div>
+                <a href="#" class="catalog-card-link">Learn More</a>
+            </div>
+        </div>
+        <div class="catalog-card">
+            <img src="wagh.jpg" alt="Product Image">
+            <div class="catalog-card-content">
+                <div class="catalog-card-title">Condensed Family</div>
+                <div class="catalog-card-description">Neue Corp Condensed<br>10 Weights + Variable Cut</div>
+                <a href="#" class="catalog-card-link">Learn More</a>
+            </div>
+        </div>
+        <div class="catalog-card">
+            <img src="shlok.jpg" alt="Product Image">
+            <div class="catalog-card-content">
+                <div class="catalog-card-title">Tight Family</div>
+                <div class="catalog-card-description">Neue Corp Tight<br>10 Weights + Variable Cut</div>
+                <a href="#" class="catalog-card-link">Learn More</a>
+            </div>
+        </div>
+        <div class="catalog-card">
+            <img src="baroqueweb.jpg" alt="Product Image">
+            <div class="catalog-card-content">
+                <div class="catalog-card-title">Narrow Family</div>
+                <div class="catalog-card-description">Neue Corp Narrow<br>10 Weights + Variable Cut</div>
+                <a href="#" class="catalog-card-link">Learn More</a>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>
