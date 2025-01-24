@@ -1,326 +1,375 @@
 @font-face {
-  font-family: "Helvetica Now Var";
-  src: url("https://db.onlinewebfonts.com/t/e66905e07608167a84e6ad52f638c3c6.eot");
-  src: url("https://db.onlinewebfonts.com/t/e66905e07608167a84e6ad52f638c3c6.eot?#iefix")format("embedded-opentype"),
-  url("https://db.onlinewebfonts.com/t/e66905e07608167a84e6ad52f638c3c6.woff2")format("woff2"),
-  url("https://db.onlinewebfonts.com/t/e66905e07608167a84e6ad52f638c3c6.woff")format("woff"),
-  url("https://db.onlinewebfonts.com/t/e66905e07608167a84e6ad52f638c3c6.ttf")format("truetype"),
-  url("https://db.onlinewebfonts.com/t/e66905e07608167a84e6ad52f638c3c6.svg#Helvetica Now Var")format("svg");
+    font-family: "Helvetica Now Var";
+    src: url("https://db.onlinewebfonts.com/t/e66905e07608167a84e6ad52f638c3c6.eot");
+    src: url("https://db.onlinewebfonts.com/t/e66905e07608167a84e6ad52f638c3c6.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/e66905e07608167a84e6ad52f638c3c6.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/e66905e07608167a84e6ad52f638c3c6.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/e66905e07608167a84e6ad52f638c3c6.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/e66905e07608167a84e6ad52f638c3c6.svg#Helvetica Now Var")format("svg");
+  }
+  
+  body {
+      text-align: center;
+      font-family: "Helvetica Now Var";    margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+    
+    .background {
+      position: relative; 
+      width: 100%;
+      height: 100vh;
+      background: url('baroqueweb.jpg') no-repeat center center;
+      background-size: cover;
+    }
+    
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.27);
+    }
+    
+    .text {
+      position: relative;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 10vw;
+      font-weight: bold;
+      color: white;
+      text-align: center;
+    }
+    
+    .oneofone {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 10vw;
+      font-weight: bold;
+      color: white;
+      text-align: center;
+    }
+  
+    .navbar {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 20px;
+      box-sizing: border-box;
+    }
+    
+    .navbar a {
+      color: rgb(0, 0, 0);
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    
+    .card-container {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      padding: 20px;
+    }
+    
+    .card {
+        width: 300px;
+        height: 400px;
+        position: relative;
+        perspective: 1000px; /* For the 3D flip effect */
+    }
+
+    .card-inner {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        text-align: center;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+    }
+
+    .card:hover .card-inner {
+        transform: rotateY(180deg);
+    }
+
+    .card-front, .card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        background: white;
+        box-shadow: 0px 1px 15px -3px rgba(0, 0, 0, 0.30);
+        border-radius: 25px;
+    }
+
+    .card-front {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .card-image {
+        width: 260px;
+        height: 260px;
+        margin: 20px;
+        overflow: hidden;
+        border-radius: 15px;
+    }
+
+    .card-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: grayscale(100%);
+    }
+
+    .card-content {
+        color: #1E1E1E;
+        font-family: Helvetica;
+        margin-left: -80px
+    }
+
+    .card-content .name {
+        font-size: 24px;
+        font-weight: 400;
+        text-align: left; /* Align text to the left */
+    }
+
+    .card-content .title {
+        font-size: 18px;
+        font-weight: 300;
+        margin-top: 5px;
+    }
+
+    .card-content .location {
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
+        font-size: 14px;
+        color: #868686;
+        font-weight: 300;
+    }
+
+    .location-icon {
+        width: 12px;
+        height: 15px;
+        background-image: url('location.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        margin-right: 5px;
+    }
+
+    .card-back {
+        background-color: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        justify-content: center;
+        transform: rotateY(180deg);
+        border-radius: 25px;
+    }
+
+    .card-back h1 {
+        font-size: 24px;
+        margin: 0;
+    }
+
+    .card-back p {
+        font-size: 18px;
+        margin: 5px 0;
+    }
+    
+      
+      .link-container a {
+        text-decoration: none; /* Removes underline */
+        color: black; /* Sets text color */
+
 }
-
-body {
+    footer {
+      background-color: #000000;
+      padding: 20px;
+      text-align: center;
+      color: #ffffff;
+    }
+    
+    form {
+      display: inline-block;
+      text-align: left;
+      max-width: 300px;
+      width: 100%;
+    }
+    
+    label, input {
+      display: block;
+      margin-bottom: 10px;
+      width: 100%;
+    }
+    
+    input[type=text],
+    input[type=tel],
+    input[type=email] {
+      height: 40px;
+      border-radius: 20px;
+      padding: 0 15px;
+      border: 1px solid #ffffff;
+      background-color: #ffffff;
+      color: #000000;
+    }
+    
+    input[type=submit] {
+      background-color: #ffffff;
+      border: none;
+      color: #000000;
+      padding: 12px 24px;
+      text-align: auto;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      width: auto;
+      border-radius: 25px;
+    }
+    
+    fieldset {
+      border: none;
+      padding: 0;
+      margin-bottom: 10px;
+    }
+    
+    legend {
+      margin-bottom: 5px;
+    }
+    
+    .radio-group {
+      display: flex;
+      gap: 15px;
+    }
+    
+    .radio-group label {
+      display: flex;
+      align-items: auto;
+      margin-bottom: 0;
+    }
+    
+    .radio-group input[type=radio] {
+      margin-right: 5px;
+      width: auto;
+    }
+    
+    .philosophy {
+      text-align: left;
+      padding-left: 200px;
+      padding-right: 200px;
+      padding-bottom: 50;
+    }
+    .catalog {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 40px;
+  }
+  
+  .catalog-card {
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      overflow: hidden;
+      text-align: center;
+      transition: transform 0.3s;
+      background-color: rgba(255, 255, 255, 0);
+  }
+  
+  .catalog-card:hover {
+      transform: translateY(-5px);
+  }
+  
+  .catalog-card img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      display: block;
+  }
+  
+  .catalog-card-content {
+      padding: 20px;
+  }
+  
+  .catalog-card-title {
+      font-size: 1.2em;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #333;
+  }
+  
+  .catalog-card-description {
+      font-size: 1em;
+      color: #666;
+      margin-bottom: px;
+  }
+  
+  .catalog-card-link {
+      text-decoration: none;
+      color: #007BFF;
+      font-weight: bold;
+  }
+  
+  .catalog-card-link:hover {
+      text-decoration: underline;
+  }
+  
+  table.blue {
+    border: 4px solid #555555;
+    background-color: #555555;
+    width: 400px;
     text-align: center;
-    font-family: "Helvetica Now Var";    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
+    border-collapse: collapse;
   }
-  
-  .background {
-    position: relative; 
-    width: 100%;
-    height: 100vh;
-    background: url('baroqueweb.jpg') no-repeat center center;
-    background-size: cover;
+  table.blue td, table.blue th {
+    border: 1px solid #555555;
+    padding: 5px 10px;
   }
-  
-  .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.27);
-  }
-  
-  .text {
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 10vw;
+  table.blue tbody td {
+    font-size: 12px;
     font-weight: bold;
-    color: white;
-    text-align: center;
+    color: #FFFFFF;
   }
-  
-  .oneofone {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 10vw;
+  table.blue td:nth-child(even) {
+    background: #398AA4;
+  }
+  table.blue thead {
+    background: #398AA4;
+    border-bottom: 10px solid #398AA4;
+  }
+  table.blue thead th {
+    font-size: 15px;
     font-weight: bold;
-    color: white;
-    text-align: center;
-  }
-
-  .navbar {
-    position: sticky;
-    top: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 20px;
-    box-sizing: border-box;
-  }
-  
-  .navbar a {
-    color: rgb(0, 0, 0);
-    text-decoration: none;
-    margin: 0 10px;
-  }
-  
-  .card-container {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-    padding: 20px;
-  }
-  
-  .card {
-    width: 300px;
-    height: 400px;
-    position: relative;
-    background: white;
-    box-shadow: 0px 1px 15px -3px rgba(0, 0, 0, 0.30);
-    border-radius: 25px;
-  }
-  
-  .card:hover {
-    transform: translateY(-5px);
-}
-
-  .card-image {
-    width: 260px;
-    height: 260px;
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    overflow: hidden;
-    border-radius: 15px;
-  }
-  
-  .card-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: grayscale(100%);
-  }
-  
-  .card-content {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    color: #1E1E1E;
-    font-family: Helvetica;
-  }
-  
-  .card-content .name {
-    font-size: 24px;
-    font-weight: 400;
+    color: #FFFFFF;
     text-align: left;
+    border-left: 2px solid #398AA4;
+  }
+  table.blue thead th:first-child {
+    border-left: none;
   }
   
-  .card-content .title {
-    font-size: 18px;
-    font-weight: 300;
-    margin-top: 5px;
+  table.blue tfoot td {
+    font-size: 13px;
   }
-  
-  .card-content .location {
-    display: flex;
-    align-items: center;
-    margin-top: 10px;
-    font-size: 14px;
-    color: #868686;
-    font-weight: 300;
+  table.blue tfoot .links {
+    text-align: right;
   }
-  
-  .location-icon {
-    width: 12px;
-    height: 15px;
-    background-image: url('location.svg');
-    background-repeat: no-repeat;
-    background-position: center;
-    margin-right: 5px;
-  }
-  
-  footer {
-    background-color: #000000;
-    padding: 20px;
-    text-align: center;
-    color: #ffffff;
-  }
-  
-  form {
+  table.blue tfoot .links a{
     display: inline-block;
-    text-align: left;
-    max-width: 300px;
-    width: 100%;
+    background: #FFFFFF;
+    color: #398AA4;
+    padding: 2px 8px;
+    border-radius: 5px;
   }
   
-  label, input {
-    display: block;
-    margin-bottom: 10px;
-    width: 100%;
-  }
-  
-  input[type=text],
-  input[type=tel],
-  input[type=email] {
-    height: 40px;
-    border-radius: 20px;
-    padding: 0 15px;
-    border: 1px solid #ffffff;
-    background-color: #ffffff;
-    color: #000000;
-  }
-  
-  input[type=submit] {
-    background-color: #ffffff;
-    border: none;
-    color: #000000;
-    padding: 12px 24px;
-    text-align: auto;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    width: auto;
-    border-radius: 25px;
-  }
-  
-  fieldset {
-    border: none;
-    padding: 0;
-    margin-bottom: 10px;
-  }
-  
-  legend {
-    margin-bottom: 5px;
-  }
-  
-  .radio-group {
-    display: flex;
-    gap: 15px;
-  }
-  
-  .radio-group label {
-    display: flex;
-    align-items: auto;
-    margin-bottom: 0;
-  }
-  
-  .radio-group input[type=radio] {
-    margin-right: 5px;
-    width: auto;
-  }
-  
-  .philosophy {
-    text-align: left;
-    padding-left: 200px;
-    padding-right: 200px;
-    padding-bottom: 50;
-  }
-  .catalog {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    padding: 40px;
-}
-
-.catalog-card {
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    overflow: hidden;
-    text-align: center;
-    transition: transform 0.3s;
-}
-
-.catalog-card:hover {
-    transform: translateY(-5px);
-}
-
-.catalog-card img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    display: block;
-}
-
-.catalog-card-content {
-    padding: 20px;
-}
-
-.catalog-card-title {
-    font-size: 1.2em;
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: #333;
-}
-
-.catalog-card-description {
-    font-size: 1em;
-    color: #666;
-    margin-bottom: 15px;
-}
-
-.catalog-card-link {
-    text-decoration: none;
-    color: #007BFF;
-    font-weight: bold;
-}
-
-.catalog-card-link:hover {
-    text-decoration: underline;
-}
-
-table.blue {
-  border: 4px solid #555555;
-  background-color: #555555;
-  width: 400px;
-  text-align: center;
-  border-collapse: collapse;
-}
-table.blue td, table.blue th {
-  border: 1px solid #555555;
-  padding: 5px 10px;
-}
-table.blue tbody td {
-  font-size: 12px;
-  font-weight: bold;
-  color: #FFFFFF;
-}
-table.blue td:nth-child(even) {
-  background: #398AA4;
-}
-table.blue thead {
-  background: #398AA4;
-  border-bottom: 10px solid #398AA4;
-}
-table.blue thead th {
-  font-size: 15px;
-  font-weight: bold;
-  color: #FFFFFF;
-  text-align: left;
-  border-left: 2px solid #398AA4;
-}
-table.blue thead th:first-child {
-  border-left: none;
-}
-
-table.blue tfoot td {
-  font-size: 13px;
-}
-table.blue tfoot .links {
-  text-align: right;
-}
-table.blue tfoot .links a{
-  display: inline-block;
-  background: #FFFFFF;
-  color: #398AA4;
-  padding: 2px 8px;
-  border-radius: 5px;
-}
