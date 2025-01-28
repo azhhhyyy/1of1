@@ -189,9 +189,8 @@ body {
   
     
     .link-container a {
-      text-decoration: none; /* Removes underline */
-      color: black; /* Sets text color */
-
+      text-decoration: none;
+      color: rgb(0, 0, 0);
 }
   footer {
     background-color: #000000;
@@ -271,104 +270,109 @@ body {
     padding-right: 200px;
     padding-bottom: 50;
   }
-  .catalog {
+  .cat-body {
+    background: white;
+    padding: 2rem;
+}
+
+.catalogue-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    padding: 40px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    max-width: 1600px;
+    margin: 0 auto;
 }
 
-.catalog-card {
-    border: 1px solid #ccc;
-    border-radius: 10px;
+.catalogue-card {
+    background: white;
+    border-radius: 16px;
+    padding: 1.5rem;
+    border: 1px solid #d4d4d4;
+    transition: transform 0.2s ease;
     overflow: hidden;
-    text-align: center;
-    transition: transform 0.3s;
-    background-color: rgba(255, 255, 255, 0);
 }
 
-.catalog-card:hover {
-    transform: translateY(-5px);
+.catalogue-card:hover {
+    transform: translateY(-4px);
 }
 
-.catalog-card img {
+.project-image-container {
+    position: relative;
     width: 100%;
-    height: 300px;
-    object-fit: cover;
-    display: block;
+    padding-top: 56.25%;
+    background: #f8f8f8;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    border: 1px solid #eee;
 }
 
-.catalog-card-content {
-    padding: 20px;
+.project-image-placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.catalog-card-title {
-    font-size: 1.2em;
-    font-weight: bold;
-    margin-bottom: 10px;
+.project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+.project-content {
+    padding: 0 0.5rem;
+}
+
+.project-category {
+    background: #f0f0f0;
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    display: inline-block;
+    margin-bottom: 0.8rem;
+    font-weight: 500;
+    color: #444;
+}
+
+.project-title {
+    font-size: 1.4rem;
+    font-weight: 700;
     color: #333;
+    margin-bottom: 0.6rem;
+    line-height: 1.2;
 }
 
-.catalog-card-description {
-    font-size: 1em;
+.project-details {
     color: #666;
-    margin-bottom: px;
+    font-size: 0.95rem;
+    line-height: 1.4;
 }
 
-.catalog-card-link {
-    text-decoration: none;
-    color: #007BFF;
-    font-weight: bold;
+@media (max-width: 1400px) {
+    .catalogue-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
-.catalog-card-link:hover {
-    text-decoration: underline;
+@media (max-width: 1024px) {
+    .catalogue-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
-table.blue {
-  border: 4px solid #555555;
-  background-color: #555555;
-  width: 400px;
-  text-align: center;
-  border-collapse: collapse;
-}
-table.blue td, table.blue th {
-  border: 1px solid #555555;
-  padding: 5px 10px;
-}
-table.blue tbody td {
-  font-size: 12px;
-  font-weight: bold;
-  color: #FFFFFF;
-}
-table.blue td:nth-child(even) {
-  background: #398AA4;
-}
-table.blue thead {
-  background: #398AA4;
-  border-bottom: 10px solid #398AA4;
-}
-table.blue thead th {
-  font-size: 15px;
-  font-weight: bold;
-  color: #FFFFFF;
-  text-align: left;
-  border-left: 2px solid #398AA4;
-}
-table.blue thead th:first-child {
-  border-left: none;
-}
-
-table.blue tfoot td {
-  font-size: 13px;
-}
-table.blue tfoot .links {
-  text-align: right;
-}
-table.blue tfoot .links a{
-  display: inline-block;
-  background: #FFFFFF;
-  color: #398AA4;
-  padding: 2px 8px;
-  border-radius: 5px;
+@media (max-width: 640px) {
+    .catalogue-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .catalogue-card {
+        max-width: 400px;
+        margin: 0 auto;
+    }
 }
